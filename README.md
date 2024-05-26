@@ -1,6 +1,6 @@
 # About Us Project
 
-This project showcases information about the "BALLETTO" dance school using React. The project is created with [Create React App](https://github.com/facebook/create-react-app) and includes the use of Tailwind CSS for styling.
+This project showcases information about the "BALLETTO-SCHOOL" dance school using React. The project is created with [Create React App](https://github.com/facebook/create-react-app) and includes the use of Tailwind CSS for styling.
 
 ## Getting Started
 
@@ -18,8 +18,8 @@ Ensure you have the following installed on your local machine:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/about-us-project.git
-   cd about-us-project
+   git clone https://github.com/authweb/baletto-school.git
+   cd baletto-school
    ```
 
 2. **Install dependencies:**
@@ -147,8 +147,7 @@ Use Tailwind's utility classes in your React components to style them as needed.
 
 ```jsx
 <div className="bg-gray-200 p-4 rounded">
-  <h4 className="text-xl font-bold mb-4 text-center">BALLETTO - ЭТО ЭМОЦИИ</h4>
-  <p className="text-center">Школа BALLETTO работает с 2020 года...</p>
+  <h4 className="text-xl font-bold mb-4 text-center">Baletto</h4>
 </div>
 ```
 
