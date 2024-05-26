@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function StudentList() {
     const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/baletto-school/api/index.php')
+        // Замените URL на ваш фактический URL API
+        axios.get('http://localhost/baletto-school/api/')
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
+                setStudents(response.data);
             })
-            .then(data => setStudents(data))
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('There was an error fetching the students!', error);
+            });
     }, []);
 
     return (
-        <div className="p-4">
-            <h2 className="text-xl mb-4">Our Students</h2>
-            <ul>
-                {students.map(student => (
-                    <li key={student.id} className="mb-2">
-                        {student.name}
-                    </li>
+        <div className="container mx-auto p-4">
+            <h2 className="text-4xl font-bold text-center mb-8">Список студентов</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {students.map((student, index) => (
+                    <div key={index} className="bg-white p-4 rounded shadow">
+                        <h3 className="text-xl font-bold mb-2">{student.first_name} {student.last_name}</h3>
+                        <p>Email: {student.email}</p>
+                        <p>Phone: {student.phone}</p>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
