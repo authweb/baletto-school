@@ -1,154 +1,147 @@
-# About Us Project
+# О нашем проекте
 
-This project showcases information about the "BALLETTO-SCHOOL" dance school using React. The project is created with [Create React App](https://github.com/facebook/create-react-app) and includes the use of Tailwind CSS for styling.
+В этом проекте представлена информация о танцевальной школе "BALLETTO-SCHOOL", использующей React. Проект создан с помощью [Создать приложение React](https://github.com/facebook/create-react-app) и включает в себя использование Tailwind CSS для стилизации.
 
-## Getting Started
+## Начало работы
 
-To get a local copy up and running follow these simple steps.
+Чтобы запустить локальную копию, выполните следующие простые действия.
 
-### Prerequisites
+### Предварительные требования
 
-Ensure you have the following installed on your local machine:
+Убедитесь, что на вашем локальном компьютере установлено следующее:
 
-- Node.js (version 12 or higher)
-- npm (version 6 or higher)
+- Node.js (версия 12 или выше)
+- npm (версия 6 или выше)
 
-### Installation
+### Установка
 
-1. **Clone the repository:**
+1. **Клонируйте репозиторий:**
 
-   ```bash
-   git clone https://github.com/authweb/baletto-school.git
-   cd baletto-school
-   ```
+```bash
+    git clone https://github.com/authweb/baletto-school.git
+    cd baletto-school
+```
 
-2. **Install dependencies:**
+2. **Установите зависимости:**
 
-   ```bash
-   npm install
-   ```
+```bash
+    npm install
+```
+### Запуск проекта
 
-### Running the Project
+В каталоге проекта вы можете запустить:
 
-In the project directory, you can run:
+#### `Запуск npm"
 
-#### `npm start`
+Запускает приложение в режиме разработки.\
+Откройте [http://localhost:3000](http://localhost:3000), чтобы просмотреть его в своем браузере.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Страница будет перезагружена после внесения изменений.\
+Вы также можете увидеть любые ошибки в консоли.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### Additional Scripts
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Дополнительные сценарии
 
 #### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Создает приложение для рабочей среды в папке "build".\
+Это корректно связывает React в рабочем режиме и оптимизирует сборку для достижения наилучшей производительности.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Сборка сокращена, а имена файлов содержат хэши.\
+Ваше приложение готово к развертыванию!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Дополнительную информацию смотрите в разделе о [deployment](https://facebook.github.io/create-react-app/docs/deployment).
 
 #### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+** Примечание: это односторонняя операция. Выполнив `eject`, вы не сможете вернуться назад!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Если вас не устраивает инструмент сборки и выбранная конфигурация, вы можете `eject` ее в любое время. Эта команда удалит зависимость от одиночной сборки из вашего проекта.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Вместо этого он скопирует все файлы конфигурации и переходные зависимости (webpack, Babel, ESLint и т.д.) прямо в ваш проект, чтобы вы имели полный контроль над ними. Все команды, кроме `eject`, по-прежнему будут работать, но они будут указывать на скопированные скрипты, чтобы вы могли их настроить. На данный момент вы предоставлены сами себе.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Вам не обязательно использовать `eject`. Специально разработанный набор функций подходит для небольших и средних развертываний, и вы не должны чувствовать себя обязанным использовать эту функцию. Однако мы понимаем, что этот инструмент был бы бесполезен, если бы вы не могли настроить его, когда будете к нему готовы.
 
-## Learn More
+## Подробнее
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Вы можете узнать больше в [Документации по созданию приложения React](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Чтобы изучить React, ознакомьтесь с [документацией по React](https://reactjs.org/).
 
-### Code Splitting
+### Разделение кода
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Этот раздел перенесен сюда: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Анализ размера пакета
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Этот раздел перенесен сюда: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Создание прогрессивного веб-приложения
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Этот раздел перенесен сюда: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Расширенная настройка
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Этот раздел перенесен сюда: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Развертывание
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Этот раздел перенесен сюда: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Этот раздел перенесен сюда: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## Using Tailwind CSS
+## Использование Tailwind CSS
 
-We use Tailwind CSS for styling our components. Tailwind is a utility-first CSS framework that provides low-level utility classes to build custom designs. 
+Мы используем Tailwind CSS для стилизации наших компонентов. Tailwind - это CSS-фреймворк, который предоставляет низкоуровневые классы для создания пользовательских дизайнов. 
 
-### Installation
+### Установка
 
-To install Tailwind CSS, run the following command:
+Чтобы установить Tailwind CSS, выполните следующую команду:
 
 ```bash
-npm install tailwindcss
+    npm install tailwindcss
 ```
 
-### Configuration
+### Конфигурация
 
-1. Create a `tailwind.config.js` file:
+1. Создайте файл `tailwind.config.js`:
 
-   ```bash
-   npx tailwindcss init
-   ```
+```bash
+    npx tailwindcss init
+```
 
-2. Configure your template paths in `tailwind.config.js`:
+2. Настройте пути к вашим шаблонам в `tailwind.config.js`:
 
-   ```js
-   module.exports = {
-     purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-     darkMode: false, // or 'media' or 'class'
-     theme: {
-       extend: {},
-     },
-     variants: {
-       extend: {},
-     },
-     plugins: [],
-   }
-   ```
+```js
+    module.exports = {
+        purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+        darkMode: false, // or 'media' or 'class'
+        theme: {
+        extend: {},
+        },
+        variants: {
+        extend: {},
+        },
+        plugins: [],
+    }
+```
 
-3. Add Tailwind to your CSS file (e.g., `src/index.css`):
+3. Добавьте Tailwind в свой CSS-файл (например, `src/index.css`):
 
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
+```css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+```
+### Использование
 
-### Usage
-
-Use Tailwind's utility classes in your React components to style them as needed. For example:
+Используйте служебные классы Tailwind в своих компонентах React, чтобы придать им необходимый стиль. Например:
 
 ```jsx
-<div className="bg-gray-200 p-4 rounded">
-  <h4 className="text-xl font-bold mb-4 text-center">Baletto</h4>
-</div>
+    <div className="bg-gray-200 p-4 rounded">
+        <h4 className="text-xl font-bold mb-4 text-center">Baletto</h4>
+    </div>
 ```
 
-By following these steps, you can ensure that your project is set up and styled correctly using Tailwind CSS.
+Выполнив эти действия, вы сможете убедиться, что ваш проект настроен и оформлен правильно с использованием Tailwind CSS.
