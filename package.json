@@ -2,19 +2,27 @@
   "name": "baletto-school",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost/baletto-school/api/",
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
+    "http-proxy-middleware": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev:start": "react-scripts start",
+    "dev:server": "nodemon api/index.js",
+    "dev": "concurrently \"npm run dev:start\" \"npm run dev:server\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +47,14 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "mysql2": "^3.9.8",
+    "nodemon": "^3.1.1",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }
 }
