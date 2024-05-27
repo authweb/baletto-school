@@ -18,7 +18,6 @@ app.use(
 // Использование парсера JSON для всех маршрутов до их определения
 app.use(express.json());
 
-
 // Разрешить доступ к статическим файлам из директории 'public'
 app.use('/public', express.static(path.join(__dirname, 'public')));
 

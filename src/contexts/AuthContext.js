@@ -1,38 +1,23 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
-// Создаем контекст
 const AuthContext = createContext();
 
-// Создаем провайдер
-export const AuthProvider = ({ children }) => {
-    const [authState, setAuthState] = useState({
-        isAuthenticated: false,
-        user: null,
-        role: null,
-    });
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
 
-    const login = (user, role) => {
-        setAuthState({
-            isAuthenticated: true,
-            user,
-            role,
-        });
+    const login = (user) => {
+        setUser(user);
     };
 
     const logout = () => {
-        setAuthState({
-            isAuthenticated: false,
-            user: null,
-            role: null,
-        });
+        setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{ ...authState, login, logout }}>
+        <AuthContext.Provider value={{ user, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
 };
 
-// Хук для использования контекста
-export const useAuth = () => useContext(AuthContext);
+export { AuthContext, AuthProvider };

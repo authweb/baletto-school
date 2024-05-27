@@ -1,37 +1,49 @@
+// routes/trainers.js
 const express = require('express');
 const router = express.Router();
 const db = require('./db');
-const path = require('path');
 
-// Обслуживание статических файлов
-router.use('/public/images', express.static(path.join(__dirname, 'public/images')));
-
+// Маршрут для получения списка тренеров
 router.get('/trainers', async (req, res) => {
     try {
         const [rows] = await db.execute('SELECT * FROM trainers');
-        if (rows.length === 0) {
-            return res.status(404).json({ message: 'No trainers found' });
-        }
-
-
-        const trainers = rows;
-        res.json({
-            message: 'Trainers fetched successfully',
-            trainers: trainers.map((trainer) => ({
-                id: trainer.id,
-                first_name: trainer.first_name,
-                last_name: trainer.last_name,
-                patronymic: trainer.patronymic,
-                email: trainer.email,
-                phone: trainer.phone,
-                bio: trainer.bio,
-                image_path: trainer.image_path,
-                hire_date: trainer.hire_date,
-                created_at: trainer.created_at,
-            })),
-        });
+        res.json({ trainers: rows });
     } catch (error) {
-        console.error(error);
+        console.error('Error fetching trainers:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+// Маршрут для добавления тренера
+router.post('/trainers', async (req, res) => {
+    const { first_name, last_name, patronymic, bio } = req.body;
+    try {
+        const [result] = await db.execute(
+            'INSERT INTO trainers (first_name, last_name, patronymic, bio) VALUES (?, ?, ?, ?)',
+            [first_name, last_name, patronymic, bio]
+        );
+        const newTrainer = {
+            id: result.insertId,
+            first_name,
+            last_name,
+            patronymic,
+            bio
+        };
+        res.status(201).json({ trainer: newTrainer });
+    } catch (error) {
+        console.error('Error adding trainer:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+// Маршрут для удаления тренера
+router.delete('/trainers/:id', async (req, res) => {
+    const trainerId = req.params.id;
+    try {
+        await db.execute('DELETE FROM trainers WHERE id = ?', [trainerId]);
+        res.status(200).json({ message: 'Trainer deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting trainer:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
 });

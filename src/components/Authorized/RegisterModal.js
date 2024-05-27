@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
@@ -8,10 +9,19 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Реализуйте логику регистрации
-        console.log('Register:', { name, email, password });
+        try {
+            const response = await axios.post('http://localhost:4000/api/register', {
+                name,
+                email,
+                password,
+            });
+            console.log('User registered:', response.data);
+            onRequestClose();
+        } catch (error) {
+            console.error('Error registering user:', error);
+        }
     };
 
     return (
@@ -20,7 +30,7 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
             onRequestClose={onRequestClose}
             contentLabel="Register Modal"
             className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75"
-            overlayClassName="fixed inset-0 bg-gray-800 bg-opacity-75"
+            overlayClassName="fixed inset-0 bg-gray-800 bg-opacity-75 z-50"
         >
             <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-4">Регистрация</h2>
