@@ -16,18 +16,20 @@ router.get('/trainers', async (req, res) => {
 
 // Маршрут для добавления тренера
 router.post('/trainers', async (req, res) => {
-    const { first_name, last_name, patronymic, bio } = req.body;
+    const { first_name, last_name, patronymic, bio, email, phone } = req.body;
     try {
         const [result] = await db.execute(
-            'INSERT INTO trainers (first_name, last_name, patronymic, bio) VALUES (?, ?, ?, ?)',
-            [first_name, last_name, patronymic, bio]
+            'INSERT INTO trainers (first_name, last_name, patronymic, bio, email, phone) VALUES (?, ?, ?, ?, ?, ?)',
+            [first_name, last_name, patronymic, bio, email, phone]
         );
         const newTrainer = {
             id: result.insertId,
             first_name,
             last_name,
             patronymic,
-            bio
+            bio,
+            email,
+            phone,
         };
         res.status(201).json({ trainer: newTrainer });
     } catch (error) {

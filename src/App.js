@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -12,6 +13,9 @@ import TrainerPage from './components/Trainers';
 import AdminPanel from './components/Dashboard/Dashboard';
 import RegisterModal from './components/Authorized/RegisterModal';
 import LoginModal from './components/Authorized/LoginModal';
+import ManageTrainers from './components/Dashboard/ManageTrainers';
+import ScheduleManagement from './components/Dashboard/ScheduleManagement';
+import ViewApplications from './components/Dashboard/ViewApplications';
 
 function App() {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
@@ -45,12 +49,13 @@ function AppContent({ openLoginModal, openRegisterModal, closeLoginModal, closeR
 
   const handleLoginSuccess = async (token) => {
     try {
-      // Здесь должна быть логика для получения пользователя из токена
-      const user = { token, role: 'admin' }; // Пример пользователя
+      const decodedToken = jwtDecode(token);
+      const user = { token, role: decodedToken.role };
       login(user);
 
-      // Перенаправление в зависимости от роли пользователя
-      if (user.role === 'admin') {
+      if (user.role === 'user') {
+        navigate('/');
+      } else if (user.role === 'admin') {
         navigate('/admin');
       } else if (user.role === 'trainer') {
         navigate('/trainer');
@@ -76,10 +81,15 @@ function AppContent({ openLoginModal, openRegisterModal, closeLoginModal, closeR
           <Route path="/contact" element={<Contact />} />
           <Route path="/trainers" element={<TrainerPage />} />
           <Route
-            path="/admin"
+            path="/admin/*"
             element={
               <ProtectedRoute allowedRoles={['admin']}>
-                <AdminPanel />
+                <Routes>
+                  <Route path="/" element={<ManageTrainers />} />
+                  <Route path="trainers" element={<ManageTrainers />} />
+                  <Route path="schedule" element={<ScheduleManagement />} />
+                  <Route path="applications" element={<ViewApplications />} />
+                </Routes>
               </ProtectedRoute>
             }
           />
